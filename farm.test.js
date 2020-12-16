@@ -482,7 +482,7 @@ describe("getTotalProfit", () => {
         expect(getTotalProfit(cropsOne, environmentFactorsLow)).toBe(1785);
     });
 
-    //Note: If crop object always should contain the same amount of factors given in environmentFactors
+    // Crop object in cropsArray should always contain the same amount of factors given in environmentObject | ex: cropsWithOneFactor # environmentFactorsOne
     test("1 factor given", () => {
         expect(getTotalProfit(cropsWithOneFactor, environmentFactorsOne)).toBe(5200);
     });
@@ -490,8 +490,6 @@ describe("getTotalProfit", () => {
     test("No factors given", () => {
         expect(getTotalProfit(crops)).toBe(5900);
     });
-
-    //=================================== TODO
 
     test("No crop given, error catch", () => {
         expect(getTotalProfit(environmentFactorsMedHigh)).toBeUndefined();
